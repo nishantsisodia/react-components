@@ -1,0 +1,238 @@
+.input-field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.input-label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-field-container input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  transition: all 200ms;
+}
+
+.input-field-container input:focus {
+  outline: none;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+
+.input-field-container input:disabled {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.input-outlined,
+.input-filled {
+  border-radius: 0.375rem;
+}
+
+.input-outlined {
+  background-color: white;
+}
+
+.input-filled {
+  background-color: #f3f4f6;
+  border-color: transparent;
+}
+
+.input-ghost {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 2px solid #3b82f6;
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.input-ghost:hover {
+  border-bottom-color: #2563eb;
+}
+
+.input-ghost:focus {
+  border-bottom-color: #1d4ed8;
+  box-shadow: none;
+}
+
+/* Sizes */
+.input-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.input-md {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+}
+
+.input-lg {
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+}
+
+/* States */
+.input-invalid {
+  border-color: #ef4444;
+}
+
+.input-invalid:focus {
+  --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity));
+  border-color: #ef4444;
+}
+
+.input-disabled {
+  opacity: 0.5;
+}
+
+/* Helper and Error text */
+.helper-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.error-message {
+  font-size: 0.875rem;
+  color: #ef4444;
+}
+
+/* Buttons */
+.clear-button,
+.password-toggle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  color: #6b7280;
+  transition: all 150ms ease;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.clear-button:hover,
+.password-toggle:hover {
+  color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.clear-button:focus,
+.password-toggle:focus {
+  color: #2563eb;
+  background-color: #dbeafe;
+  outline: none;
+}
+
+/* Size-specific button positioning */
+.input-sm ~ .clear-button,
+.input-sm ~ .password-toggle {
+  width: 20px;
+  height: 20px;
+  font-size: 0.875rem;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-md ~ .clear-button,
+.input-md ~ .password-toggle {
+  width: 24px;
+  height: 24px;
+  font-size: 1rem;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-lg ~ .clear-button,
+.input-lg ~ .password-toggle {
+  width: 28px;
+  height: 28px;
+  font-size: 1.125rem;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Adjust input padding to accommodate the buttons */
+.input-field-container input {
+  padding-right: 30px;
+}
+
+.input-field-container input.has-two-buttons {
+  padding-right: 58px;
+}
+
+/* Position for when both buttons are present */
+.password-toggle + .clear-button {
+  right: 28px;
+}
+
+/* Size-specific text */
+.input-sm ~ .helper-text,
+.input-sm ~ .error-message {
+  font-size: 0.75rem;
+}
+
+.input-md ~ .helper-text,
+.input-md ~ .error-message {
+  font-size: 0.875rem;
+}
+
+.input-lg ~ .helper-text,
+.input-lg ~ .error-message {
+  font-size: 1rem;
+}
+
+/* Adjust button sizes based on input size */
+.input-sm ~ .clear-button,
+.input-sm ~ .password-toggle {
+  @apply text-sm right-1;
+}
+
+.input-md ~ .clear-button,
+.input-md ~ .password-toggle {
+  @apply text-base right-2;
+}
+
+.input-lg ~ .clear-button,
+.input-lg ~ .password-toggle {
+  @apply text-lg right-3;
+}
+
+.password-toggle + .clear-button {
+  @apply right-8;
+}
+
+/* Adjust helper text size based on input size */
+.input-sm ~ .helper-text,
+.input-sm ~ .error-message {
+  @apply text-xs;
+}
+
+.input-md ~ .helper-text,
+.input-md ~ .error-message {
+  @apply text-sm;
+}
+
+.input-lg ~ .helper-text,
+.input-lg ~ .error-message {
+  @apply text-base;
+}

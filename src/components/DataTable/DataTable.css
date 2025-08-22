@@ -1,0 +1,61 @@
+.data-table-container {
+  @apply w-full overflow-x-auto;
+}
+
+.data-table {
+  @apply min-w-full divide-y divide-gray-200 bg-white;
+}
+
+.data-table thead {
+  @apply bg-gray-50;
+}
+
+.data-table th {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.data-table td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+}
+
+.sortable-header {
+  @apply cursor-pointer hover:bg-gray-100;
+}
+
+.sort-indicator {
+  @apply ml-2 inline-block;
+}
+
+.data-table tbody tr {
+  @apply hover:bg-gray-50;
+}
+
+.selected-row {
+  @apply bg-blue-50;
+}
+
+.checkbox-column {
+  @apply w-12 text-center;
+}
+
+.data-table-loading,
+.data-table-empty {
+  @apply p-4 text-center text-gray-500;
+}
+
+/* Alternating row colors */
+.data-table tbody tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .data-table-container {
+    @apply border rounded-lg border-gray-200;
+  }
+
+  .data-table th,
+  .data-table td {
+    @apply px-4 py-2;
+  }
+}
